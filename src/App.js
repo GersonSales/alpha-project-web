@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import AlphaNavbar from "./component/AlphaNavbar";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
+        <AlphaNavbar/>
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
