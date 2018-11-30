@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {Navbar, Nav, NavItem, NavDropdown, MenuItem} from "react-bootstrap"
 
-class AlphaNavbar extends Component {
+class AlphaNavbar extends React.Component {
   render() {
     return (
       <Navbar inverse collapseOnSelect>
