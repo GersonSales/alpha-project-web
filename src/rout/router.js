@@ -1,21 +1,27 @@
 import React from "react";
 import Loadable from "react-loadable";
-import Loading from "./../component/Loading"
 
-const LoadingComponent = () => {
-  return Loading;
-};
+const LoadingComponent = Loadable({
+  loader: () => import("./../component/Loading"),
+  loading() {
+    return <div>Loading...</div>
+  }
+});
 
 const HelloComponent = Loadable({
   loader: () => import("./../component/HelloComponent"),
-  loading: LoadingComponent,
+  loading: LoadingComponent
+});
+
+const DishesComponent = Loadable({
+  loader: () => import("./../component/main/Dishes"),
+  loading: LoadingComponent
+});
+
+const PortfolioComponent = Loadable({
+  loader: () => import("./../component/main/Portfolio"),
+  loading: LoadingComponent
 });
 
 
-export default class TestClass extends React.Component {
-  render() {
-    return (
-      <HelloComponent/>
-    );
-  }
-}
+export default PortfolioComponent;
