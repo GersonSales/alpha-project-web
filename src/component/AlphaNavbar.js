@@ -13,16 +13,16 @@ class AlphaNavbar extends React.Component {
         </Navbar.Header>
         <Navbar.Collapse>
           <Nav>
-            <NavItem eventKey={1} href="#">
+            <NavItem eventKey={1} href="#dishes">
               Dishes
             </NavItem>
-            <NavItem eventKey={2} href="#">
+            <NavItem eventKey={2} href="#portfolio">
               Portfolio
             </NavItem>
           </Nav>
           <Nav pullRight>
             <NavDropdown eventKey={3} title="User" id="basic-nav-dropdown">
-              <MenuItem eventKey={3.1}>Profile</MenuItem>
+              <MenuItem eventKey={3.1} href="#user">Profile</MenuItem>
               <MenuItem eventKey={3.2}>Settings</MenuItem>
               <MenuItem divider/>
               <MenuItem eventKey={3.3}>Log out</MenuItem>

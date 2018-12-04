@@ -24,4 +24,10 @@ const PortfolioComponent = Loadable({
 });
 
 
-export default PortfolioComponent;
+const routes = [
+  {path: "/portfolio", name: "Portfolio", exact: true, component: PortfolioComponent},
+  {path: "/dishes", name: "Dishes", exact: true, component: DishesComponent},
+  {path: "/", name: "Home", exact: true, component: HelloComponent}
+];
+
+export default routes;
