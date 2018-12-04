@@ -14,7 +14,7 @@ const HelloComponent = Loadable({
 });
 
 const DishesComponent = Loadable({
-  loader: () => import("./../component/main/Dishes"),
+  loader: () => import("../component/dishes/Main"),
   loading: LoadingComponent
 });
 
@@ -25,8 +25,8 @@ const PortfolioComponent = Loadable({
 
 
 const routes = [
-  {path: "/portfolio", name: "Portfolio", exact: true, component: PortfolioComponent},
-  {path: "/dishes", name: "Dishes", exact: true, component: DishesComponent},
+  {path: "/portfolio", name: "Portfolio", component: PortfolioComponent},
+  {path: "/dishes", name: "Dishes", component: DishesComponent},
   {path: "/", name: "Home", exact: true, component: HelloComponent}
 ];
 

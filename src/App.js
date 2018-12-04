@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './App.css';
 import AlphaNavBar from "./component/AlphaNavbar";
 import MainComponent from "./component/MainComponent"
@@ -9,9 +9,10 @@ class App extends Component {
       <div className="App">
         <AlphaNavBar/>
         <body>
-          <MainComponent/>
+        <MainComponent/>
         </body>
       </div>
+
     );
   }
 }
