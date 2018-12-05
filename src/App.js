@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import './App.css';
-import AlphaNavBar from "./component/AlphaNavbar";
+import NavBar from "./component/navigation/NavBar";
 import MainComponent from "./component/MainComponent"
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <AlphaNavBar/>
+        <NavBar/>
         <body>
         <MainComponent/>
         </body>

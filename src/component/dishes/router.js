@@ -16,7 +16,7 @@ const Details = Loadable({
 });
 
 const routes = [
-  {path: "/dishes/id", name: "Details", exact:true, component: Details},
+  {path: "/dishes/:id", name: "Details", exact:true, component: Details},
   {path: "/dishes", name: "CardGroup", exact:true, component: CardGroup}
 ];
 
