@@ -21,7 +21,7 @@ export default class DishCard extends React.Component {
             <Image src={this.props.image} style={{width:"100%", maxHeight: 185, objectFit: "cover"}}/>
             <Card.Content>
               <Card.Header>{this.props.name}</Card.Header>
-              <Card.Description style={{maxHeight:100, overflow:"hidden", objectFit: "cover"}}>{this.props.description}</Card.Description>
+              <Card.Description style={{overflow:"hidden", textOverflow:"ellipsis", whiteSpace:"nowrap"}}>{this.props.description}</Card.Description>
             </Card.Content>
 
             <Modal trigger={
