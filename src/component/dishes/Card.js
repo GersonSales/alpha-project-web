@@ -1,5 +1,5 @@
 import React from 'react'
-import {Card, Icon, Image, Button, Header, Modal} from 'semantic-ui-react'
+import {Card, Icon, Image, Button, Header, Modal, Container} from 'semantic-ui-react'
 import {BrowserRouter as Router} from "react-router-dom";
 
 
@@ -17,11 +17,11 @@ export default class DishCard extends React.Component {
 
       <Router basename="/dishes">
         <div>
-          <Card style={{ marginTop: 5, marginRight: 5, marginBottom: 5, marginLeft:5 }}>
-            <Image src={this.props.image}/>
+          <Card style={{ margin:10, maxHeight:500}}>
+            <Image src={this.props.image} style={{width:"100%", maxHeight: 185, objectFit: "cover"}}/>
             <Card.Content>
               <Card.Header>{this.props.name}</Card.Header>
-              <Card.Description>{this.props.description}</Card.Description>
+              <Card.Description style={{maxHeight:100, overflow:"hidden", objectFit: "cover"}}>{this.props.description}</Card.Description>
             </Card.Content>
 
             <Modal trigger={
@@ -36,8 +36,8 @@ export default class DishCard extends React.Component {
                 <Image wrapped size='medium' src={this.props.image}/>
                 <Modal.Description>
                   <Header>{this.props.name}</Header>
-                  <p>{this.props.description}</p>
-                  <p>{this.props.description}</p>
+                  <p >{this.props.description}</p>
+                  <p >{this.props.description}</p>
                 </Modal.Description>
               </Modal.Content>
 
