@@ -23,9 +23,15 @@ const PortfolioComponent = Loadable({
   loading: LoadingComponent
 });
 
+const ControlPanelComponent = Loadable({
+  loader: () => import("../component/controlPanel/Main"),
+  loading: LoadingComponent
+});
+
 
 const routes = [
   {path: "/portfolio", name: "Portfolio", component: PortfolioComponent},
+  {path: "/control-panel", name: "Portfolio", component: ControlPanelComponent},
   {path: "/dishes", name: "Dishes", component: DishesComponent},
   {path: "/", name: "Home", exact: true, component: HelloComponent}
 ];

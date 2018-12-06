@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {Input, Menu, Segment, Divider} from 'semantic-ui-react'
-import DropdownTriggerExample from "./UserOptions";
+import LoggedUserDropdown from "./UserOptions";
 import {BrowserRouter as Router, Link} from "react-router-dom";
 
 export default class NavBar extends Component {
@@ -14,7 +14,6 @@ export default class NavBar extends Component {
     const {activeItem} = this.state;
 
     return (
-      <Router forceRefresh >
         <Segment inverted style={{ marginBottom: 30 }}>
           <Menu inverted pointing secondary>
             <Menu.Item
@@ -43,11 +42,10 @@ export default class NavBar extends Component {
               <Menu.Item>
                 <Input icon='search' placeholder='Search...'/>
               </Menu.Item>
-              <Menu.Item><DropdownTriggerExample/></Menu.Item>
+              <Menu.Item><LoggedUserDropdown/></Menu.Item>
             </Menu.Menu>
           </Menu>
         </Segment>
-      </Router>
     )
   }
 }

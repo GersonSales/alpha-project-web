@@ -10,7 +10,6 @@ export default class MainComponent extends Component {
     return (
       <Container>
         <main className={"MainComponent"}>
-          <Router forceRefresh={true}>
             <Switch>
               {Routes.map((route, idx) => {
                   return route.component ? (
@@ -29,7 +28,6 @@ export default class MainComponent extends Component {
               )}
               <Route path={"/"} name={"PageNotFound"} component={pageNotFound}/>
             </Switch>
-          </Router>
         </main>
       </Container>
 
