@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import DishControlPanelComponent from './tab/DishControlPanel';
-import UserControlPanelComponent from './tab/UserControlPanel';
+import DishControlPanelComponent from './tab/dish/DishControlPanel';
+import UserControlPanelComponent from './tab/user/UserControlPanel';
 import DishAccordion from "./tab/dish/DishAccordion";
 import PageNotFound from "./../util/PageNotFound";
 import DishCreation from "./tab/dish/DishCreation"

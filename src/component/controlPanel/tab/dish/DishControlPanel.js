@@ -1,8 +1,7 @@
 import React from "react";
-import Accordion from "./dish/DishAccordion";
-import "./dish/style.css"
-import DishControlPanelMenu from "./dish/DishControlPanelMenu";
-import ComponentRouter from "./../router"
+import "./style.css"
+import DishControlPanelMenu from "./DishControlPanelMenu";
+import ComponentRouter from "./../../router"
 
 export default class DishControlPanel extends React.Component {
   constructor(props) {
@@ -18,11 +17,9 @@ export default class DishControlPanel extends React.Component {
 
   render() {
     const {activeItem} = this.state;
-
     return (
       <div>
         <DishControlPanelMenu handler={this.handleItemClick}/>
-        <div>{activeItem}</div>
         <ComponentRouter tag={activeItem}/>
       </div>);
   }
