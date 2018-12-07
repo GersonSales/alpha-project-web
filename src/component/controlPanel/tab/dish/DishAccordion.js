@@ -2,10 +2,10 @@ import React, {Component} from 'react'
 import {Accordion, Icon} from 'semantic-ui-react'
 import "./style.css"
 import axios from "axios";
+import DishDetails from "./DishDetails";
 
 export default class DishAccordion extends Component {
   state = {
-    activeIndex: 0,
     dishes: []
   };
 
@@ -38,9 +38,11 @@ export default class DishAccordion extends Component {
                 {dish.name}
               </Accordion.Title>
               <Accordion.Content active={activeIndex === i}>
-                <p>
-                  {dish.description}
-                </p>
+                <DishDetails name={`${dish.name}`}
+                             type={`${dish.type}`}
+                             image={`${dish.image}`}
+                             description={`${dish.description}`}
+                             price={`${dish.price}`}/>
               </Accordion.Content>
             </div>
         )}

@@ -6,11 +6,14 @@ import {BrowserRouter as Router} from "react-router-dom";
 export default class DishCard extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {term: "DefaultTerm"};
+    this.state = {
+      term: "DefaultTerm",
+      modalOpen: false
+    };
   }
 
-  handleOpen = () => this.setState({ modalOpen: true })
-  handleClose = () => this.setState({ modalOpen: false })
+  handleOpen = () => this.setState({ modalOpen: true });
+  handleClose = () => this.setState({ modalOpen: false });
 
   render() {
     return (

@@ -21,7 +21,7 @@ export default class DishControlPanelMenu extends Component {
           name='dishAccordion'
           active={activeItem === 'dishAccordion'}
           onClick={this.handleItemClick}>
-          <b>Dishes</b>
+          <b>List</b>
         </Menu.Item>
 
         <Menu.Item
