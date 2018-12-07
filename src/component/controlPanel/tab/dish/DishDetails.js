@@ -14,8 +14,8 @@ export default class DishDetails extends React.Component {
   handleClose = () => this.setState({modalOpen: false});
 
   handleDeletion = () =>  {
+    console.log(this.props.id);
     this.handleClose();
-    console.log(this.props.id)
   };
 
   render() {
@@ -42,10 +42,10 @@ export default class DishDetails extends React.Component {
                   </p>
                 </Modal.Content>
                 <Modal.Actions>
-                  <Button basic color='red' inverted onClick={this.handleDeletion}>
+                  <Button basic color='red' inverted onClick={this.handleClose}>
                     <Icon name='remove'/> No
                   </Button>
-                  <Button color='green' inverted onClick={this.handleClose}>
+                  <Button color='green' inverted onClick={this.handleDeletion}>
                     <Icon name='checkmark'/> Yes
                   </Button>
                 </Modal.Actions>
