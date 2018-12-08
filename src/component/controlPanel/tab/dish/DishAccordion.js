@@ -22,7 +22,8 @@ export default class DishAccordion extends Component {
   componentDidMount() {
     axios.get(this.dishUrl).then(res => {
       const dishes = res.data.result;
-      this.setState({ dishes });
+      this.setState({dishes});
+
     });
   }
 
@@ -32,19 +33,20 @@ export default class DishAccordion extends Component {
     return (
       <Accordion fluid styled className="Accordion">
         {this.state.dishes.map((dish, i) =>
-            <div>
-              <Accordion.Title active={activeIndex === i} index={i} onClick={this.handleClick}>
-                <Icon name='dropdown'/>
-                {dish.name}
-              </Accordion.Title>
-              <Accordion.Content active={activeIndex === i}>
-                <DishDetails name={`${dish.name}`}
-                             type={`${dish.type}`}
-                             image={`${dish.image}`}
-                             description={`${dish.description}`}
-                             price={`${dish.price}`}/>
-              </Accordion.Content>
-            </div>
+          <div>
+            <Accordion.Title active={activeIndex === i} index={i} onClick={this.handleClick}>
+              <Icon name='dropdown'/>
+              {dish.name}
+            </Accordion.Title>
+            <Accordion.Content active={activeIndex === i}>
+              <DishDetails _id={`${dish._id}`}
+                           name={`${dish.name}`}
+                           type={`${dish.type}`}
+                           image={`${dish.image}`}
+                           description={`${dish.description}`}
+                           price={`${dish.price}`}/>
+            </Accordion.Content>
+          </div>
         )}
       </Accordion>
     )

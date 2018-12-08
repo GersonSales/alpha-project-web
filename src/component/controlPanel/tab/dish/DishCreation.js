@@ -1,6 +1,7 @@
 import React from 'react'
 import {Form, Input, TextArea, Button, Select} from 'semantic-ui-react'
 import axios from "axios";
+import ImageUploader from "./../../../../util/ImagesUploader"
 
 
 export default class DishCreation extends React.Component {
@@ -9,7 +10,8 @@ export default class DishCreation extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { type: "DINNER",
+    this.state = {
+      type: "DINNER",
       image: "https://www.dish.co.nz/media/VERSIONS/images/kg_vegestew_article--740x1005.jpg"
     };
 
@@ -17,7 +19,7 @@ export default class DishCreation extends React.Component {
 
   updateField = (event) => {
     this.setState({[event.target.name]: event.target.value});
-    console.log(this.state);
+    console.log(event.target.name + ": " + event.target.value);
   };
 
   handleSubmit = (event) => {
@@ -26,7 +28,7 @@ export default class DishCreation extends React.Component {
     const dish = this.state;
     console.log(dish);
 
-    axios.post(this.BASE_URL,  dish )
+    axios.post(this.BASE_URL, dish)
       .then(res => {
         console.log(res);
         console.log(res.data);
@@ -64,15 +66,19 @@ export default class DishCreation extends React.Component {
 
           />
           <Form.Field
-            id='form-input-control-dish-type'
             control={Select}
             options={typeOptions}
-            name="type"
-            label={{children: 'Type', htmlFor: 'form-select-control-gender'}}
+            label={{children: 'Type', htmlFor: 'form-select-control-type'}}
             placeholder='Ex.: Dinner'
             search
-            searchInput={{id: 'form-select-control-gender'}}
-            onChange={this.updateField}
+            searchInput={
+              {
+                id: 'form-select-control-type',
+                name: "type"
+              }
+            }
+            name="type"
+            onClick={this.updateField}
           />
         </Form.Group>
         <Form.Field
@@ -91,7 +97,9 @@ export default class DishCreation extends React.Component {
           label='Create the new dish'
           onClick={this.handleSubmit}
         />
+        <ImageUploader/>
       </Form>
+
     );
   }
 

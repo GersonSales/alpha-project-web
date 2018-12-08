@@ -1,6 +1,7 @@
 import React from 'react'
 import {Button, Image, Item} from 'semantic-ui-react'
 import {Header, Icon, Modal} from 'semantic-ui-react'
+import axios from "axios";
 
 const paragraph = <Image src='https://react.semantic-ui.com/images/wireframe/short-paragraph.png'/>;
 
@@ -13,9 +14,15 @@ export default class DishDetails extends React.Component {
   handleOpen = () => this.setState({modalOpen: true});
   handleClose = () => this.setState({modalOpen: false});
 
-  handleDeletion = () =>  {
-    console.log(this.props.id);
-    this.handleClose();
+  handleDeletion = event => {
+    event.preventDefault();
+
+    axios.delete(`http://localhost:3030/dish/${this.props._id}`)
+      .then(res => {
+        console.log(res);
+        console.log(res.data);
+        this.handleClose();
+      })
   };
 
   render() {
