@@ -1,14 +1,18 @@
 import React from 'react'
-import {Button, Image, Item} from 'semantic-ui-react'
-import {Header, Icon, Modal} from 'semantic-ui-react'
+import {Button, Header, Icon,  Item, Modal} from 'semantic-ui-react'
 import axios from "axios";
-
-const paragraph = <Image src='https://react.semantic-ui.com/images/wireframe/short-paragraph.png'/>;
+import DishForm from "./DishForm"
 
 export default class DishDetails extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {modalOpen: false};
+    this.state = {
+      modalOpen: false,
+      name: props.name,
+      description: props.description,
+      price: props.price,
+      type: props.type
+    };
   }
 
   handleOpen = () => this.setState({modalOpen: true});
@@ -32,12 +36,11 @@ export default class DishDetails extends React.Component {
           <Item.Image size='small' src={this.props.image}/>
 
           <Item.Content verticalAlign='middle'>
-            <Item.Header>{this.props.name}</Item.Header>
-            <Item.Description>{this.props.description}</Item.Description>
+            <DishForm method={"put"} {...this.props}/>
             <Item.Extra>
               <Modal trigger={<Button
-                     onClick={this.handleOpen}
-                     color={"red"}>Delete</Button>}
+                onClick={this.handleOpen}
+                color={"red"}>Delete</Button>}
                      basic size='small'
                      onClose={this.handleClose}
                      open={this.state.modalOpen}>
