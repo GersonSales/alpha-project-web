@@ -28,12 +28,18 @@ const ControlPanelComponent = Loadable({
   loading: LoadingComponent
 });
 
+const LoginComponent = Loadable({
+  loader: () => import("../component/user/SignInUpPage"),
+  loading: LoadingComponent
+});
+
 
 const routes = [
   {path: "/portfolio", name: "Portfolio", component: PortfolioComponent},
   {path: "/control-panel", name: "Portfolio", component: ControlPanelComponent},
   {path: "/dishes", name: "Dishes", component: DishesComponent},
-  {path: "/", name: "Home", exact: true, component: HelloComponent}
+  {path: "/", name: "Home", exact: true, component: HelloComponent},
+  {path: "/login", name: "Loigin", exact: true, component: LoginComponent }
 ];
 
 export default routes;

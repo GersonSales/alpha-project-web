@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
-import {Input, Menu, Segment, Divider} from 'semantic-ui-react'
+import {Input, Menu, Segment} from 'semantic-ui-react'
 import LoggedUserDropdown from "./UserOptions";
-import {BrowserRouter as Router, Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 export default class NavBar extends Component {
   state = {activeItem: 'home'};
