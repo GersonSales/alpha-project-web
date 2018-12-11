@@ -15,9 +15,6 @@ class SignInUpPage extends React.Component {
     };
   }
 
-  handleLogin = () => {
-    this.setState({logged_in: "yes"});
-  };
 
   isUserLogged = () => {
     return this.state.logged_in === "yes";
@@ -29,7 +26,7 @@ class SignInUpPage extends React.Component {
       this.props.history.push("/");
       return (<HelloComponent/>);
     } else {
-      return (<LoginPage />);
+      return (<LoginPage {...this.props}/>);
     }
   }
 }

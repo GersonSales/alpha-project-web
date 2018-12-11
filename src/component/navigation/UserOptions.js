@@ -6,10 +6,6 @@ import {withCookies, Cookies} from 'react-cookie';
 import axios from "axios";
 
 class UserOptions extends React.Component {
-  static propTypes = {
-    cookies: instanceOf(Cookies).isRequired
-  };
-
   config = {
     headers: {}
   };
