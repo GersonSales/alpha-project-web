@@ -17,8 +17,8 @@ export default class MainComponent extends Component {
                              path={route.path}
                              exact={route.exact}
                              name={route.name}
-                             render={props => (
-                               <route.component {...props} />
+                             render={routeProps => (
+                               <route.component {...this.props}{...routeProps} />
                              )
                              }
                       />

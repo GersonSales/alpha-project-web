@@ -1,30 +1,33 @@
 import React from "react";
 import LoginPage from "./LoginPage"
-import { instanceOf } from 'prop-types';
-import { withCookies, Cookies } from 'react-cookie';
+import {instanceOf} from 'prop-types';
+import {withCookies, Cookies} from 'react-cookie';
+import HelloComponent from "./../HelloComponent";
+import {Route} from "react-router-dom";
 
 
 class SignInUpPage extends React.Component {
-  static propTypes = {
-    cookies: instanceOf(Cookies).isRequired
-  };
   constructor(props) {
     super(props);
-    this.state = {logged_in: true};
-
     const { cookies } = props;
     this.state = {
-      logged_in: cookies.get("logged_in") || false
+      logged_in: cookies.get("logged_in") || "no"
     };
-
-    cookies.set("logged_in", this.state.logged_in, {path:"/"});
   }
+
+  handleLogin = () => {
+    this.setState({logged_in: "yes"});
+  };
+
+  isUserLogged = () => {
+    return this.state.logged_in === "yes";
+  };
 
 
   render() {
-    console.log(this.state.logged_in);
-    if (Boolean(this.state.logged_in)) {
-      return (<div> SignUp </div>);
+    if (this.isUserLogged()) {
+      this.props.history.push("/");
+      return (<HelloComponent/>);
     } else {
       return (<LoginPage />);
     }
