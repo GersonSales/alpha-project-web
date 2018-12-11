@@ -13,7 +13,6 @@ class LoginPage extends React.Component {
 
     const {cookies} = props;
     this.state = {
-      logged_in: cookies.get("logged_in"),
       loading: false,
       user: {email: "", password: ""},
     };
@@ -27,13 +26,10 @@ class LoginPage extends React.Component {
     axios.post("http://localhost:3030/auth/", user)
       .then((res) => {
         if (res.status === 200) {
-          this.props.history.push("/");
           const {cookies} = this.props;
           cookies.set("token", res.data.token, {path: "/"});
-          cookies.set("user_id", res.data.user_id, {path: "/"});
-          cookies.set("logged_in", "yes", {path: "/"});
           this.setState({loading: false});
-          this.state.handler();
+          this.props.history.push("/");
         }
 
       }).catch(error => {

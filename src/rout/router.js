@@ -27,7 +27,7 @@ const PortfolioComponent = Loadable({
 const ControlPanelComponent = Loadable({
   loader: () => isAuthenticated() ?
     import("../component/controlPanel/Main") :
-    import("../component/HelloComponent"),
+    import("../component/user/SignInUpPage"),
   loading: LoadingComponent
 });
 
@@ -39,7 +39,7 @@ const SignUpComponent = Loadable({
 const ProfileComponent = Loadable({
   loader: () => isAuthenticated() ?
     import("../component/user/Profile") :
-    import("../component/HelloComponent"),
+    import("../component/user/SignInUpPage"),
   loading: LoadingComponent
 });
 

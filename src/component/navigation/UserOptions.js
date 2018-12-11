@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import {instanceOf} from 'prop-types';
 import {withCookies, Cookies} from 'react-cookie';
 import axios from "axios";
+import {getUserInfo} from "../auth/Service";
 
 class UserOptions extends React.Component {
   config = {
@@ -13,36 +14,31 @@ class UserOptions extends React.Component {
   constructor(props) {
     super(props);
     const {cookies} = props;
-    this.config.headers = {token: cookies.get("token") || null};
-    this.state = {
-      user_id: cookies.get("user_id") || null,
-    };
+    this.state = {logged_in: "no"};
 
-    if (this.state.user_id) {
-      this.getUser();
+    const token = cookies.get("token");
+    if (token !== null && token !== undefined) {
+      getUserInfo(token).then((data) => {
+        this.setState(data);
+        console.log("UserOption: " + JSON.stringify(this.state));
+      }).catch((error) => {
+        console.log("UserOption: " + error);
+      })
     }
 
   }
 
-  getUser = () => {
-    axios.get(`http://localhost:3030/user/${this.state.user_id}`, this.config)
-      .then(res => {
-        this.setState({user: res.data});
-      })
-      .catch(error => {
-        console.log(error);
-      })
-  };
-
   getUserInfo = () => {
     const linkStyle = {color: "black"};
-    if (this.state.user) {
+    const { firstName } = this.state;
+
+    if (firstName !== null && firstName !== undefined) {
       return ([
         {
           key: 'user',
           text: (
             <span>
-            Signed in as <strong>{this.state.user.firstName}</strong>
+            Signed in as <strong>{firstName}</strong>
           </span>
           ),
           disabled: true,
@@ -59,8 +55,8 @@ class UserOptions extends React.Component {
         {key: 'settings', text: 'Settings'},
         {key: 'sign-out', text: 'Sign Out'},
       ]);
-    }else {
-      return([
+    } else {
+      return ([
         {
           key: 'user', text: (
             <span>
@@ -77,14 +73,17 @@ class UserOptions extends React.Component {
   };
 
   getTrigger = () => {
-    return(
+    const { firstName } = this.state;
+    return (
       <span>
-        <Icon name='user'/> {`Hello, ${this.state.user? this.state.user.firstName : "visitant"}`}
+        <Icon name='user'/> {`Hello, ${firstName ? firstName : "visitant"}`}
       </span>
     );
   };
 
   render() {
+
+
 
     return (<Dropdown trigger={this.getTrigger()} options={this.getUserInfo()}/>);
   }

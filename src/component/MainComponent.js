@@ -3,7 +3,6 @@ import Routes from "../rout/router";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import pageNotFound from "./util/PageNotFound"
 import {Container} from 'semantic-ui-react';
-import {isAuthenticated} from "./auth/Service";
 
 
 export default class MainComponent extends Component {
