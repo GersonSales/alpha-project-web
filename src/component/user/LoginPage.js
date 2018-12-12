@@ -52,7 +52,7 @@ class LoginPage extends React.Component {
   render() {
     if (this.isUserLogged()) {
       this.props.history.push("/");
-      return (<HelloComponent />);
+      return (<HelloComponent/>);
     } else {
       return (
         <div className='login-form'>

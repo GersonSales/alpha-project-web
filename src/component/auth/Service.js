@@ -1,10 +1,20 @@
 import axios from "axios";
 import jwtDecode from "jsonwebtoken";
-import {instanceOf} from "prop-types";
-import {Cookies} from "react-cookie";
+import Cookies from "cookie-monster";
 
 export const isAuthenticated = () => {
-  return false;
+  const token = Cookies.getItem("token");
+  console.log("isAuthenticatedToken" + token);
+
+  let result = Boolean(isAValidToken(token)) === true;
+  Cookies.setItem("logged_in", result ? "yes" : "no", {path: "/"});
+  console.log("result isAuth " + result);
+  return result;
+};
+
+export const signOut = () => {
+  Cookies.removeItem("token");
+  Cookies.setItem("logged_in", "no", {path: "/"});
 };
 
 export const getUserInfo = async (token) => {
@@ -21,6 +31,11 @@ export const getUserInfo = async (token) => {
   }
 };
 
-export const isAValidToken = async (token) => {
-  return getUserInfo(token) !== null;
+export const isAValidToken = (token) => {
+  const validTokin = token !== null && token !== undefined;
+  if (validTokin === true) {
+    let userInfo = getUserInfo(token);
+    return userInfo !== null && userInfo !== undefined;
+  }
+  return false;
 };

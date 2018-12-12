@@ -2397,6 +2397,11 @@ convert-source-map@^1.1.0, convert-source-map@^1.4.0, convert-source-map@^1.5.1:
   dependencies:
     safe-buffer "~5.1.1"
 
+cookie-monster@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/cookie-monster/-/cookie-monster-0.2.1.tgz#48523d5ead6c66e57f74695e3895bf8e18610ea7"
+  integrity sha1-SFI9Xq1sZuV/dGleOJW/jhhhDqc=
+
 cookie-signature@1.0.6:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/cookie-signature/-/cookie-signature-1.0.6.tgz#e303a882b342cc3ee8ca513a79999734dab3ae2c"

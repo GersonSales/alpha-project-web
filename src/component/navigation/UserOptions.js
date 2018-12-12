@@ -1,15 +1,10 @@
 import React from 'react'
 import {Dropdown, Icon} from 'semantic-ui-react'
 import {Link} from "react-router-dom";
-import {instanceOf} from 'prop-types';
-import {withCookies, Cookies} from 'react-cookie';
-import axios from "axios";
+import {withCookies} from 'react-cookie';
 import {getUserInfo} from "../auth/Service";
 
 class UserOptions extends React.Component {
-  config = {
-    headers: {}
-  };
 
   constructor(props) {
     super(props);
@@ -53,7 +48,7 @@ class UserOptions extends React.Component {
         {key: 'integrations', text: 'Integrations'},
         {key: 'help', text: 'Help'},
         {key: 'settings', text: 'Settings'},
-        {key: 'sign-out', text: 'Sign Out'},
+        {key: 'sign-out', text: (<Link to={"/sign-out"} style={linkStyle}>Sign Out</Link>)},
       ]);
     } else {
       return ([

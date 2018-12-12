@@ -44,13 +44,20 @@ const ProfileComponent = Loadable({
 });
 
 
+const SignOut = Loadable({
+  loader: () => import("../component/user/SignOut"),
+  loading: LoadingComponent
+});
+
+
 const routes = [
   {path: "/portfolio", name: "Portfolio", component: PortfolioComponent},
-  {path: "/control-panel", name: "Portfolio", component: ControlPanelComponent},
+  {path: "/control-panel", name: "ControlPanel", component: ControlPanelComponent},
   {path: "/dishes", name: "Dishes", component: DishesComponent},
   {path: "/", name: "Home", exact: true, component: HelloComponent},
   {path: "/login", name: "Login", exact: true, component: SignUpComponent},
-  {path: "/profile", name: "Profile", component: ProfileComponent}
+  {path: "/profile", name: "Profile", component: ProfileComponent},
+  {path: "/sign-out", name: "SignOu", component: SignOut}
 ];
 
 export default routes;
