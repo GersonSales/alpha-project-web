@@ -6,6 +6,7 @@ export default class SignOut extends React.Component {
     super(props);
     signOut();
     props.history.push("/");
+    window.location.reload()
   }
 
   render() {

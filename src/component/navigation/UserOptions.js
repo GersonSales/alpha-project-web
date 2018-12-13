@@ -25,7 +25,8 @@ class UserOptions extends React.Component {
 
   getUserInfo = () => {
     const linkStyle = {color: "black"};
-    const { firstName } = this.state;
+    console.log("HERE: "+ JSON.stringify(this.state));
+    const { firstName, lastName } = this.state;
 
     if (firstName !== null && firstName !== undefined) {
       return ([
@@ -33,7 +34,7 @@ class UserOptions extends React.Component {
           key: 'user',
           text: (
             <span>
-            Signed in as <strong>{firstName}</strong>
+            Signed in as <strong>{firstName + " " + lastName}</strong>
           </span>
           ),
           disabled: true,
@@ -44,10 +45,6 @@ class UserOptions extends React.Component {
           text: (<Link to={"/control-panel"} style={linkStyle}>Control Panel</Link>),
           href: "/portfolio"
         },
-        {key: 'explore', text: 'Explore'},
-        {key: 'integrations', text: 'Integrations'},
-        {key: 'help', text: 'Help'},
-        {key: 'settings', text: 'Settings'},
         {key: 'sign-out', text: (<Link to={"/sign-out"} style={linkStyle}>Sign Out</Link>)},
       ]);
     } else {
@@ -61,6 +58,7 @@ class UserOptions extends React.Component {
           disabled: true,
         },
         {key: 'login', text: (<Link to={"/login"} style={linkStyle}>Login</Link>)},
+        {key: 'signUp', text: (<Link to={"/sign-up"} style={linkStyle}>Sign Up</Link>)},
 
 
       ]);

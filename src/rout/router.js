@@ -49,6 +49,13 @@ const SignOut = Loadable({
   loading: LoadingComponent
 });
 
+const SignUp = Loadable({
+  loader: () => isAuthenticated() ?
+    import("../component/HelloComponent") :
+    import("../component/user/SignUp"),
+  loading: LoadingComponent
+});
+
 
 const routes = [
   {path: "/portfolio", name: "Portfolio", component: PortfolioComponent},
@@ -57,7 +64,8 @@ const routes = [
   {path: "/", name: "Home", exact: true, component: HelloComponent},
   {path: "/login", name: "Login", exact: true, component: SignUpComponent},
   {path: "/profile", name: "Profile", component: ProfileComponent},
-  {path: "/sign-out", name: "SignOu", component: SignOut}
+  {path: "/sign-out", name: "SignOut", component: SignOut},
+  {path: "/sign-up", name: "SignUṕ", component: SignUp},
 ];
 
 export default routes;

@@ -1,10 +1,7 @@
 import React from 'react'
 import {Button, Form, Grid, Header, Image, Message, Segment} from 'semantic-ui-react'
 import axios from "axios";
-import {Link, Route} from "react-router-dom";
-
-import {instanceOf} from 'prop-types';
-import {Cookies, withCookies} from 'react-cookie';
+import {withCookies} from 'react-cookie';
 import HelloComponent from "../HelloComponent";
 
 class LoginPage extends React.Component {
@@ -30,6 +27,7 @@ class LoginPage extends React.Component {
           cookies.set("token", res.data.token, {path: "/"});
           this.setState({loading: false});
           this.props.history.push("/");
+          window.location.reload();
         }
 
       }).catch(error => {
