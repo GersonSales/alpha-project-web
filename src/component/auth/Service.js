@@ -24,7 +24,13 @@ export const getUserInfo = async (token) => {
     };
     config.headers = {token: token};
     const {id} = jwtDecode.decode(token);
-    const {data} = await axios.get("http://localhost:3030/user/" + id, config);
+    const {data} = await axios.get("http://localhost:3030/user/" + id, config)
+                              .catch((error)=> {
+                                const status = error.response.status;
+                                if(status === 401) {
+                                  signOut();
+                                }
+                              });
     return data;
   } catch (e) {
     console.log(e);
