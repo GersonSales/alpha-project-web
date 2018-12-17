@@ -54,8 +54,8 @@ class UserOptions extends React.Component {
           ),
           disabled: true,
         },
-        {key: 'login', text: (<Link to={"/login"} style={linkStyle}>Login</Link>)},
-        {key: 'signUp', text: (<Link to={"/sign-up"} style={linkStyle}>Sign Up</Link>)},
+        {key: 'login', text: (<Link to={"/join"} style={linkStyle}>Login</Link>)},
+        {key: 'signUp', text: (<Link to={"/join"} style={linkStyle}>Sign Up</Link>)},
 
 
       ]);

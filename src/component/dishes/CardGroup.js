@@ -49,7 +49,7 @@ export default class CardGroup extends React.Component {
       return <div>Loading...</div>;
     } else {
       return (
-        <Card.Group itemsPerRow={15} centered style={{padding: 20}}>
+        <Card.Group itemsPerRow={15} style={{padding: 20}}>
           {listDishes}
         </Card.Group>
       );

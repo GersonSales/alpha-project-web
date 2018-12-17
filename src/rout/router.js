@@ -31,8 +31,8 @@ const ControlPanelComponent = Loadable({
   loading: LoadingComponent
 });
 
-const SignUpComponent = Loadable({
-  loader: () => import("../component/user/SignInUpPage"),
+const JoinComponent = Loadable({
+  loader: () => import("../component/user/Join"),
   loading: LoadingComponent
 });
 
@@ -52,7 +52,7 @@ const SignOut = Loadable({
 const SignUp = Loadable({
   loader: () => isAuthenticated() ?
     import("../component/home/HomeMain") :
-    import("../component/user/SignUp"),
+    import("../component/user/Join"),
   loading: LoadingComponent
 });
 
@@ -62,8 +62,8 @@ const routes = [
   {path: "/control-panel", name: "ControlPanel", component: ControlPanelComponent},
   {path: "/dishes", name: "Dishes", component: DishesComponent},
   {path: "/", name: "Home", exact: true, component: HomeComponent},
-  {path: "/login", name: "Login", exact: true, component: SignUpComponent},
   {path: "/profile", name: "Profile", component: ProfileComponent},
+  {path: "/join", name: "Login", exact: true, component: JoinComponent},
   {path: "/sign-out", name: "SignOut", component: SignOut},
   {path: "/sign-up", name: "SignUṕ", component: SignUp},
 ];

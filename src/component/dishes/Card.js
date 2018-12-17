@@ -20,7 +20,7 @@ export default class DishCard extends React.Component {
 
       <Router basename="/dishes">
         <div>
-          <Card style={{ margin:10, maxHeight:500}}>
+          <Card style={{ margin:10, maxHeight:500}} color={"black"}>
             <Image src={this.props.image} style={{width:"100%", maxHeight: 185, objectFit: "cover"}}/>
             <Card.Content>
               <Card.Header>{this.props.name}</Card.Header>

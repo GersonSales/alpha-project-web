@@ -1,5 +1,5 @@
 import React from 'react'
-import {Button, Form, Grid, Header, Image, Message, Segment} from 'semantic-ui-react'
+import {Button, Form, Grid, Segment} from 'semantic-ui-react'
 import axios from "axios";
 import {withCookies} from 'react-cookie';
 import HelloComponent from "../HelloComponent";
@@ -52,14 +52,11 @@ class LoginPage extends React.Component {
       return (<HelloComponent/>);
     } else {
       return (
-        <div className='login-form'>
+        <div className='login-form '>
           <Grid textAlign='center' style={{height: '100%'}} verticalAlign='middle'>
             <Grid.Column style={{maxWidth: 450}}>
-              <Header as='h2' color='teal' textAlign='center'>
-                <Image src='/logo.png'/> Log-in to your account
-              </Header>
               <Form size='large' loading={this.state.loading}>
-                <Segment stacked>
+                <Segment>
                   <Form.Input fluid icon='user'
                               iconPosition='left'
                               name="email"
@@ -77,14 +74,11 @@ class LoginPage extends React.Component {
                     onChange={this.handleFieldUpdate}
                   />
 
-                  <Button color='teal' fluid size='large' onClick={this.attemptToLogin}>
+                  <Button primary fluid size='large' onClick={this.attemptToLogin}>
                     Login
                   </Button>
                 </Segment>
               </Form>
-              <Message>
-                New to us? <a href='#'>Sign Up</a>
-              </Message>
             </Grid.Column>
           </Grid>
         </div>);
