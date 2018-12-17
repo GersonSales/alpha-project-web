@@ -20,7 +20,7 @@ const DishesComponent = Loadable({
 });
 
 const PortfolioComponent = Loadable({
-  loader: () => import("./../component/main/Portfolio"),
+  loader: () => import("./../component/portfolio/PortfolioMain"),
   loading: LoadingComponent
 });
 

@@ -1,6 +1,7 @@
 import React from 'react'
-import {Button, Form, Input, Loader, TextArea} from 'semantic-ui-react'
+import {Button, Form, Input, Image, TextArea} from 'semantic-ui-react'
 import axios from "axios";
+import ImageSrc from "./../../../test2.jpg"
 
 
 export default class DishForm extends React.Component {
@@ -52,7 +53,8 @@ export default class DishForm extends React.Component {
       case "put":
         axios.put(this.BASE_URL + `/${dish._id}`, dish)
           .then(res => {
-            console.log("TODO");
+            this.setState({loading: false});
+            window.location.reload();
           });
         break;
 

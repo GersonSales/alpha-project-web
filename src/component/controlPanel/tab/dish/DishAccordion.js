@@ -39,8 +39,8 @@ export default class DishAccordion extends Component {
               {dish.name}
             </Accordion.Title>
             <Accordion.Content active={activeIndex === i}>
-              <DishDetails _id={`${dish._id}`}
-                           key={i}
+              <DishDetails key={i}
+                           _id={`${dish._id}`}
                            name={`${dish.name}`}
                            type={`${dish.type}`}
                            image={`${dish.image}`}

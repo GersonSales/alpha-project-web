@@ -18,9 +18,7 @@ class App extends Component {
         <BrowserRouter>
           <div>
             <NavBar/>
-            <body>
             <MainComponent {...this.props}/>
-            </body>
           </div>
         </BrowserRouter>
       </div>

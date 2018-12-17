@@ -1,8 +1,9 @@
 import React from "react";
+import PortfolioCardGroup from "./PortfolioCardGroup"
 
 export default class PortfolioMain extends React.Component {
   render() {
-    return(<div><h1>PortfolioMain </h1></div>);
+    return(<div><PortfolioCardGroup/></div>);
 
   }
 }

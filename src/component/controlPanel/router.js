@@ -8,7 +8,7 @@ import DishCreation from "./tab/dish/DishCreation"
 export default class ComponentRouter extends Component {
   components = {
     dishes: DishControlPanelComponent,
-    user: UserControlPanelComponent,
+    users: UserControlPanelComponent,
     dishAccordion: DishAccordion,
     pageNotFound: PageNotFound,
     dishCreation: DishCreation

@@ -10,18 +10,17 @@ export default class ImagesUploader extends React.Component {
   }
 
   onDrop(picture) {
-    if (this.state.pictures.length < 1) {
-      this.setState({
-        pictures: this.state.pictures.concat(picture),
-      });
-    }
+    this.setState({
+      pictures: this.state.pictures.concat(picture),
+    });
   }
 
   render() {
     return (
       <ImageUploader
-        withPreview
-        SingleImage
+        withIcon={false}
+        withLabel={false}
+        singleImage
         buttonText="Choose image"
         onChange={this.onDrop}
         imgExtension={['.jpg', '.gif', '.png', '.gif']}
