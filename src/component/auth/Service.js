@@ -4,11 +4,9 @@ import Cookies from "cookie-monster";
 
 export const isAuthenticated = () => {
   const token = Cookies.getItem("token");
-  console.log("isAuthenticatedToken" + token);
 
   let result = Boolean(isAValidToken(token)) === true;
   Cookies.setItem("logged_in", result ? "yes" : "no", {path: "/"});
-  console.log("result isAuth " + result);
   return result;
 };
 

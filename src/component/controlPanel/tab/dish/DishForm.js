@@ -23,7 +23,6 @@ export default class DishForm extends React.Component {
 
   updateField = (event) => {
     this.setState({[event.target.name]: event.target.value});
-    console.log(event.target.name + ": " + event.target.value);
   };
 
   clearForm = () => {
@@ -48,15 +47,12 @@ export default class DishForm extends React.Component {
           .then(res => {
             this.setState({loading: false});
             this.clearForm();
-            console.log(res);
-            console.log(res.data);
           });
         break;
       case "put":
         axios.put(this.BASE_URL + `/${dish._id}`, dish)
           .then(res => {
-            console.log(res);
-            console.log(res.data);
+            console.log("TODO");
           });
         break;
 

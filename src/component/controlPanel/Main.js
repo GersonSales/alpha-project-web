@@ -17,7 +17,6 @@ export default class MenuExampleTabularOnLeft extends Component {
           <Menu fluid vertical tabular>
             <Menu.Item name='user' active={activeItem === 'user'} onClick={this.handleItemClick}/>
             <Menu.Item name='dishes' active={activeItem === 'dishes'} onClick={this.handleItemClick}/>
-            <Menu.Item name='foo' active={activeItem === 'foo'} onClick={this.handleItemClick}/>
           </Menu>
         </Grid.Column>
 

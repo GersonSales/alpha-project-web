@@ -9,8 +9,8 @@ const LoadingComponent = Loadable({
   }
 });
 
-const HelloComponent = Loadable({
-  loader: () => import("../component/HelloComponent"),
+const HomeComponent = Loadable({
+  loader: () => import("../component/home/HomeMain"),
   loading: LoadingComponent
 });
 
@@ -51,7 +51,7 @@ const SignOut = Loadable({
 
 const SignUp = Loadable({
   loader: () => isAuthenticated() ?
-    import("../component/HelloComponent") :
+    import("../component/home/HomeMain") :
     import("../component/user/SignUp"),
   loading: LoadingComponent
 });
@@ -61,7 +61,7 @@ const routes = [
   {path: "/portfolio", name: "Portfolio", component: PortfolioComponent},
   {path: "/control-panel", name: "ControlPanel", component: ControlPanelComponent},
   {path: "/dishes", name: "Dishes", component: DishesComponent},
-  {path: "/", name: "Home", exact: true, component: HelloComponent},
+  {path: "/", name: "Home", exact: true, component: HomeComponent},
   {path: "/login", name: "Login", exact: true, component: SignUpComponent},
   {path: "/profile", name: "Profile", component: ProfileComponent},
   {path: "/sign-out", name: "SignOut", component: SignOut},

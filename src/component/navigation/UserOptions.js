@@ -15,9 +15,7 @@ class UserOptions extends React.Component {
     if (token !== null && token !== undefined) {
       getUserInfo(token).then((data) => {
         this.setState(data);
-        console.log("UserOption: " + JSON.stringify(this.state));
       }).catch((error) => {
-        console.log("UserOption: " + error);
       })
     }
 
@@ -25,7 +23,6 @@ class UserOptions extends React.Component {
 
   getUserInfo = () => {
     const linkStyle = {color: "black"};
-    console.log("HERE: "+ JSON.stringify(this.state));
     const { firstName, lastName } = this.state;
 
     if (firstName !== null && firstName !== undefined) {

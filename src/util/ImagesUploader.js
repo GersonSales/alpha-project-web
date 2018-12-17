@@ -15,7 +15,6 @@ export default class ImagesUploader extends React.Component {
         pictures: this.state.pictures.concat(picture),
       });
     }
-    console.log(this.state);
   }
 
   render() {

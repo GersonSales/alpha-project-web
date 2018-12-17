@@ -23,8 +23,6 @@ export default class DishDetails extends React.Component {
 
     axios.delete(`http://localhost:3030/dish/${this.props._id}`)
       .then(res => {
-        console.log(res);
-        console.log(res.data);
         this.handleClose();
       })
   };
