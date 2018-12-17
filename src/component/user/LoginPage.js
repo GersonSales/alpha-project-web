@@ -8,15 +8,14 @@ class LoginPage extends React.Component {
   constructor(props) {
     super(props);
 
-    const {cookies} = props;
     this.state = {
       loading: false,
-      user: {email: "", password: ""},
+      email: "", password: "",
     };
   }
 
   attemptToLogin = (event) => {
-    this.setState({loading: true});
+    this.setState({loading: true, email: "", password: ""});
     event.preventDefault();
     const user = this.state;
 
@@ -65,7 +64,7 @@ class LoginPage extends React.Component {
                               iconPosition='left'
                               name="email"
                               placeholder='E-mail address'
-                              value={this.state.user.email}
+                              value={this.state.email}
                               onChange={this.handleFieldUpdate}/>
                   <Form.Input
                     fluid
@@ -74,7 +73,7 @@ class LoginPage extends React.Component {
                     iconPosition='left'
                     placeholder='Password'
                     type='password'
-                    value={this.state.user.password}
+                    value={this.state.password}
                     onChange={this.handleFieldUpdate}
                   />
 
