@@ -1,6 +1,6 @@
 import React from 'react';
-import {Navbar, Nav, NavItem, NavDropdown, MenuItem} from "react-bootstrap"
-import {BrowserRouter as Router, Link, Route} from "react-router-dom";
+import {MenuItem, Nav, Navbar, NavDropdown, NavItem} from "react-bootstrap"
+import {BrowserRouter as Router, Link} from "react-router-dom";
 
 class AlphaNavbar extends React.Component {
   render() {

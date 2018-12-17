@@ -1,7 +1,6 @@
 import React from 'react'
-import {Button, Form, Input, Image, TextArea} from 'semantic-ui-react'
+import {Button, Form, Input, TextArea} from 'semantic-ui-react'
 import axios from "axios";
-import ImageSrc from "./../../../test2.jpg"
 
 
 export default class DishForm extends React.Component {

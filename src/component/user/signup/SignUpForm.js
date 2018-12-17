@@ -1,6 +1,6 @@
 import React from "react";
-import {Form, Container, Button, Segment} from 'semantic-ui-react'
-import { PostUser } from "./../../auth/Router";
+import {Button, Form, Segment} from 'semantic-ui-react'
+import {PostUser} from "./../../auth/Router";
 
 
 export default class SignUpForm extends React.Component {

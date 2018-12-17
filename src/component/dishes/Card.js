@@ -1,5 +1,5 @@
 import React from 'react'
-import {Card, Icon, Image, Button, Header, Modal, Container} from 'semantic-ui-react'
+import {Button, Card, Header, Icon, Image, Modal} from 'semantic-ui-react'
 import {BrowserRouter as Router} from "react-router-dom";
 
 
@@ -28,8 +28,8 @@ export default class DishCard extends React.Component {
             </Card.Content>
 
             <Modal trigger={
-              <Card.Content onClick={this.handleOpen} extra>
-                <a><Icon name='plus'/>Details</a>
+              <Card.Content extra>
+                <a href={"#"}><Icon name='plus' onClick={this.handleOpen}>Details</Icon></a>
               </Card.Content>
             }
             onClose={this.handleClose}

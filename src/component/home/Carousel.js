@@ -10,15 +10,15 @@ export default class Carrousel extends React.Component {
     return (
       <Carousel showThumbs={false} infiniteLoop autoPlay showStatus={false} stopOnHover transitionTime={1000}>
         <div>
-          <img src={Image1}/>
+          <img src={Image1} alt={"Image1"}/>
         </div>
 
         <div>
-          <img src={Image2}/>
+          <img src={Image2} alt={"Image2"}/>
         </div>
 
         <div>
-          <img src={Image3}/>
+          <img src={Image3} alt={"Image3"}/>
         </div>
 
 

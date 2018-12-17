@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Input, Menu, Segment, Image} from 'semantic-ui-react'
+import {Image, Input, Menu, Segment} from 'semantic-ui-react'
 import LoggedUserDropdown from "./UserOptions";
 import {Link} from "react-router-dom";
 import MainLogo from "./alpha_logo.svg"

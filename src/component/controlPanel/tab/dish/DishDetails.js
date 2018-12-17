@@ -1,5 +1,5 @@
 import React from 'react'
-import {Button, Header, Icon,  Item, Modal} from 'semantic-ui-react'
+import {Button, Header, Icon, Item, Modal} from 'semantic-ui-react'
 import axios from "axios";
 import DishForm from "./DishForm"
 

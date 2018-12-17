@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import Routes from "../rout/router";
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import {Route, Switch} from "react-router-dom";
 import pageNotFound from "./util/PageNotFound"
 import {Container} from 'semantic-ui-react';
 

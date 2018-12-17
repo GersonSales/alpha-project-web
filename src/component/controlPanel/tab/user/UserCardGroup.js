@@ -1,5 +1,5 @@
 import React from "react";
-import {Card, Button, Image} from "semantic-ui-react";
+import {Button, Card} from "semantic-ui-react";
 import {getAllUsers} from "./../../../auth/Router"
 
 export default class UserCardGroup extends React.Component {

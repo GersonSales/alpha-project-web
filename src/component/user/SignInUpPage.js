@@ -1,9 +1,7 @@
 import React from "react";
 import LoginPage from "./LoginPage"
-import {instanceOf} from 'prop-types';
-import {withCookies, Cookies} from 'react-cookie';
+import {withCookies} from 'react-cookie';
 import HelloComponent from "./../HelloComponent";
-import {Route} from "react-router-dom";
 
 
 class SignInUpPage extends React.Component {
