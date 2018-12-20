@@ -4,7 +4,7 @@ import axios from "axios";
 
 
 export default class DishForm extends React.Component {
-  BASE_URL = "http://localhost:3030/dish";
+  BASE_URL = "https://alpha-project-api.herokuapp.com/dish";
 
 
   constructor(props) {

@@ -21,7 +21,7 @@ export default class DishDetails extends React.Component {
   handleDeletion = event => {
     event.preventDefault();
 
-    axios.delete(`http://localhost:3030/dish/${this.props._id}`)
+    axios.delete(`https://alpha-project-api.herokuapp.com/dish/${this.props._id}`)
       .then(res => {
         this.handleClose();
       })

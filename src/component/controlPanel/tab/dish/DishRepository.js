@@ -2,7 +2,7 @@ import Axios from "axios";
 
 
 class DishRepository {
-  dishUrl = "http://localhost:3030/dish";
+  dishUrl = "https://alpha-project-api.herokuapp.com/dish";
 
   getAllDishes = async () => {
     try {

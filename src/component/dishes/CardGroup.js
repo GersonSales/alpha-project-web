@@ -13,7 +13,7 @@ export default class CardGroup extends React.Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3030/dish")
+    fetch("https://alpha-project-api.herokuapp.com/dish")
       .then((res) => res.json())
       .then((result) => {
           this.setState({

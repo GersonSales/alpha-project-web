@@ -19,7 +19,7 @@ class LoginPage extends React.Component {
     event.preventDefault();
     const user = this.state;
 
-    axios.post("http://localhost:3030/auth/", user)
+    axios.post("https://alpha-project-api.herokuapp.com/auth/", user)
       .then((res) => {
         if (res.status === 200) {
           const {cookies} = this.props;

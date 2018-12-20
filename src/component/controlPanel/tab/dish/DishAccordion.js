@@ -9,7 +9,7 @@ export default class DishAccordion extends Component {
     dishes: []
   };
 
-  dishUrl = "http://localhost:3030/dish";
+  dishUrl = "https://alpha-project-api.herokuapp.com/dish";
 
   handleClick = (e, titleProps) => {
     const {index} = titleProps;

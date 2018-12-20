@@ -2,7 +2,7 @@ import Cookies from "cookie-monster";
 import axios from "axios";
 
 
-const BASE_URL = "http://localhost:3030/";
+const BASE_URL = "https://alpha-project-api.herokuapp.com";
 const USER_ROUTE = BASE_URL + "user/";
 const routes = [{
   user: `${BASE_URL}user`
